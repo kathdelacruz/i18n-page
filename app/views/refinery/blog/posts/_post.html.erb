@@ -1,0 +1,24 @@
+<% flash.each do |key, value| %>
+ <div id='flash' class="flash flash_<%= key %>">
+   <%= value %>
+ </div>
+<% end %>
+<article class="container" id="blog_post">
+  <h2><%= @post.title %></h2>
+  <time datetime="<%=l @post.published_at.to_date, :format => :default %>" class='posted_at'>
+        <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(@post.published_at.to_date, :format => :short)) %>
+  </time>
+  <%= @post.body.html_safe %>
+  <section class="author">
+    <%= content_tag(:div, "#{t('by', :scope => 'refinery.blog.posts.show')} #{@post.author.username}", :class => "blog_author") if @post.author.present? %>
+  </section>
+</article>
+<% if Refinery::Blog::Post::ShareThis.enabled? %>
+  <span class="st_sharethis" displayText="ShareThis"></span>
+<% end %>
+<section class="container line preview">
+  <%= render '/refinery/draft_page_message' unless @post.nil? or @post.live? -%>
+  <h3>
+    <%= render 'nav' if next_or_previous?(@post) %>
+  </h3>
+</section>

@@ -1,0 +1,54 @@
+footer {
+  > div {
+    overflow: hidden;
+    padding: 20px;
+    background-color: $green;
+    i { color: white; }
+    span {
+      display: block;
+      color: white;
+    }
+    a { color: white; }
+    article {
+      height: 60px;
+      position: relative;
+      font-size: .8em;
+      letter-spacing: .5px;
+      a {
+        color: white;
+        &:hover { color: white; }
+      }
+      i { font-size: 3em; }
+      div {
+        left: 65px;
+        top: 0;
+        margin: 0 auto;
+        position: absolute;
+      }
+      @include span-columns (4);
+    }
+  }
+  ul {
+    margin: 10px 50px 0;
+    float: right;
+    li {
+      padding-left: 20px;
+      margin-bottom: 0;
+      display: inline-block;
+      font-size: .7em;
+    }
+  }
+  div .container { padding: 0; }
+  .credits {
+    background-color: white;
+    width: 100%;
+    padding: 0 20px;
+    text-align: left;
+    a {
+      border-top: 1px solid $green;
+      font-weight: normal;
+      color: $black;
+      font-size: .6em;
+    }
+  }
+}

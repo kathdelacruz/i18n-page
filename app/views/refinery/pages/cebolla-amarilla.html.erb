@@ -1,0 +1,78 @@
+<section class="main-product container">
+  <div class="container-img">
+    <%= image_tag 'productos/cebolla-background.png' %>
+    <div class="overlay"></div>
+  </div>
+  <h1>Cebolla Amarilla Dulce</h1>
+</section>
+<section class="container line product-description">
+  <div class="description">
+    <h3>Descripción</h3>
+    <p>La cebolla amarilla dulce es una variedad de cebolla no pungente, es generalmente más achatada que redondeada, tienen un nivel alto de azúcar y agua y menor proporción de compuestos de azufre.</p>
+  </div>
+  <div class="product-calendar">
+    <span>Disponibilidad</span>
+    <div><i class="fa fa-calendar"></i>Enero</div>
+    <div class="unavailable"><i class="fa fa-calendar"></i>Febrero</div>
+    <div class="unavailable"><i class="fa fa-calendar"></i>Marzo</div>
+    <div class="unavailable"><i class="fa fa-calendar"></i>Abril</div>
+    <div class="unavailable"><i class="fa fa-calendar"></i>Mayo</div>
+    <div><i class="fa fa-calendar"></i>Junio</div>
+    <div><i class="fa fa-calendar"></i>Julio</div>
+    <div><i class="fa fa-calendar"></i>Agosto</div>
+    <div><i class="fa fa-calendar"></i>Setiembre</div>
+    <div><i class="fa fa-calendar"></i>Octubre</div>
+    <div><i class="fa fa-calendar"></i>Noviembre</div>
+    <div><i class="fa fa-calendar"></i>Diciembre</div>
+  </div>
+  <article class="product-details">
+    <h3>Presentación</h3>
+    <p>Mallas de 20 kg / 44.09 lb</p>
+  </article>
+  <article class="product-details">
+    <h3>Calibres</h3>
+    <ul>
+      <li>Prepack (5.08 cm - 6.35 cm / 2.00 in - 2.50 in)</li>
+      <li>Mediana (6.35 cm - 8.26 cm / 2.50 in - 3.25 in)</li>
+      <li>Jumbo (8.26 cm - 10.16 cm / 3.25 in - 4.00 in)</li>
+      <li>Colosal (10.16 cm - 12.70 cm / 4.00 in - 5.00 in)</li>
+    </ul>
+  </article>
+  <article class="product-details">
+    <h3>Variedades</h3>
+    <ul>
+      <li>Century</li>
+      <li>Campo Lindo</li>
+    </ul>
+  </article>
+</section>
+<section class="benefits line container">
+  <h2>¿Por qué consumirlo?</h2>
+  <%= image_tag 'productos/producto-beneficio.jpg' %>
+  <div>
+    <i class="fa fa-circle"></i><span>Previene y combate enfermedades cardiovasculares</span>
+    <i class="fa fa-circle"></i><span>Reduce riesgo de contraer cáncer</span>
+    <i class="fa fa-circle"></i><span>Es uno de los mejores antibióticos naturales</span>
+  </div>
+</section>
+<section class="container blog">
+  <h2>Recetas</h2>
+  <% @posts.each do |post| %>
+    <% if post.live? %>
+    <article class="blog-1">
+      <div class="overlay"></div>
+      <% if (categories = post.categories.translated).any? %>
+        <span class='category'>
+          <%=raw categories.collect { |category| link_to category.title, refinery.blog_category_path(category) }.to_sentence %>
+        </span>
+      <% end %>
+      <div class="info">
+        <span class="description">
+          <%= link_to post.custom_teaser.html_safe, refinery.blog_post_path(post) %>
+        </span>
+        <span class="title"><%= link_to post.title, refinery.blog_post_path(post) %></span>
+      </div>
+    </article>
+    <% end %>
+  <% end %>
+</section>

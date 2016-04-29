@@ -1,0 +1,40 @@
+<%= link_to refinery.root_path do %>
+  <%= image_tag "miranda-logo.png", :class => "logo" %>
+<% end %>
+<ul class="language" id='locale'>
+  <% Refinery::I18n.frontend_locales.each do |frontend_locale| %>
+      <li>
+        <%= link_to Refinery::I18n.locales[frontend_locale], refinery.url_for(:locale => frontend_locale) %>
+      </li>
+  <% end %>
+</ul>
+<i class="navigation-menu-button fa fa-bars" id="mobile-menu"></i>
+<nav>
+  <ul id="navigation-menu">
+    <% if locale.to_s == "es" %>
+      <%= link_to_in_li "INICIO", '/' %>
+      <%= link_to_in_li "NOSOTROS", '/nosotros' %>
+      <%= link_to_in_li "CEBOLLA AMARILLA", '/cebolla-amarilla' %>
+      <%= link_to_in_li "PRODUCTOS", '/productos' %>
+      <%= link_to_in_li "CALIDAD", '/calidad' %>
+      <%= link_to_in_li "BLOG", '/blog' %>
+      <%= link_to_in_li "CONTACTO", '/contact_inquiries/new' %>
+    <% elsif locale.to_s == "en" %>
+      <%= link_to_in_li "HOME", '/' + locale.to_s %>
+      <%= link_to_in_li "THE COMPANY", '/' + locale.to_s + '/nosotros' %>
+      <%= link_to_in_li "SWEET ONION", '/' + locale.to_s + '/cebolla-amarilla' %>
+      <%= link_to_in_li "PRODUCTS",'/' + locale.to_s + '/productos' %>
+      <%= link_to_in_li "QUALITY", '/' +locale.to_s + '/calidad' %>
+      <%= link_to_in_li "BLOG", '/' +locale.to_s + '/blog' %>
+      <%= link_to_in_li "CONTACT", '/' +locale.to_s + '/contacto' %>
+    <% else %>
+      <%= link_to_in_li "INÍCIO", '/' + locale.to_s %>
+      <%= link_to_in_li "A EMPRESA", '/' + locale.to_s + '/a-empresa' %>
+      <%= link_to_in_li "CEBOLA AMARELA",'/' + locale.to_s + '/cebola-amarela' %>
+      <%= link_to_in_li "PRODUTOS",'/' + locale.to_s + '/produtos' %>
+      <%= link_to_in_li "QUALIDADE", '/' +locale.to_s + '/qualidade' %>
+      <%= link_to_in_li "BLOG", '/' +locale.to_s + '/blog' %>
+      <%= link_to_in_li "CONTATO", '/' +locale.to_s + '/contato' %>
+    <% end %>
+  </ul>
+</nav>

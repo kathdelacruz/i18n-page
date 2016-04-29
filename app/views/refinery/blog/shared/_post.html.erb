@@ -1,0 +1,20 @@
+<% if post.live? %>
+  <article class="blog-1">
+    <div class="overlay"></div>
+    <% if (categories = post.categories.translated).any? %>
+      <span class='category'>
+        <%=raw categories.collect { |category| link_to category.title, refinery.blog_category_path(category) }.to_sentence %>
+      </span>
+    <% end %>
+    <div class="info">
+      <span class="description">
+        <% if blog_post_teaser_enabled? %>
+          <%= link_to blog_post_teaser(post), refinery.blog_post_path(post) %>
+        <% else %>
+          <%= image_tag 'blog/blog1.jpg' %>
+        <% end %>
+      </span>
+      <span class="title"><%= link_to post.title, refinery.blog_post_path(post) %></span>
+    </div>
+  </article>
+<% end %>

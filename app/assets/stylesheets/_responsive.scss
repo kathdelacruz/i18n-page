@@ -1,0 +1,240 @@
+@media screen and (max-width: 1024px) {
+  header {
+    padding: 25px 10px;
+    .logo { width: 250px; }
+    .language { margin-top: 0;}
+    nav {
+      margin-top: 0;
+      #navigation-menu a {
+        font-size: 0.9em;
+        padding: 0;
+      }
+    }
+  }
+  .contact { width: 70%; }
+  .benefits div span {
+    padding: 35px 30px;
+    &:last-child { padding-top: 70px;}
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    border-bottom: 2px solid $color-line;
+    overflow: hidden;
+    .logo {
+      width: 50%;
+      margin: 40px 25% 0;
+    }
+    .language {
+      display: block;
+      position: relative;
+      top: -150px;
+      width: 100%;
+      text-align: center;
+      padding-left: 0;
+      font-size: .7em;
+    }
+    nav {
+      margin-top: -35px;
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+  .main h1 {
+    font-size: 1.8em;
+    right: 0;
+    width: 100%;
+  }
+  section h2 { font-size: 1.5em; }
+  .product article {
+    margin-bottom: 50px;
+    width: 100%;
+    span { font-size: 1.2em; }
+  }
+  .certificate article {
+    margin-bottom: 20px;
+    margin-right: 0;
+    width: 50%;
+  }
+  .blog {
+    .blog-1, .blog-2, .blog-3, .blog-4 {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+  }
+  .mision-vision article {
+    float: inherit;
+    width: 100%;
+    border: none;
+    margin-bottom: 25px;
+  }
+  .values div{
+    float: inherit;
+    width: 100%;
+    &:nth-child(2) {
+      border: none;
+      padding-top: 0;
+      text-align: left;
+      article { padding-bottom: 25px; }
+    }
+    &:nth-child(3) {
+      article { margin: 0 0 25px; }
+    }
+  }
+  .contact {
+    width: 90%;
+    padding: 25px;
+  }
+  
+  .benefits div span {
+    padding: 5px 15px;
+    &:last-child { padding-top: 40px;}
+  }
+  .product-description {
+    .description, .product-calendar, .product-details { width: 100%; }
+    .description { padding-right: 0; }
+    .product-details {
+      padding: 0;
+      margin-right: 0;
+      margin-top: 20px;
+      ul, ul li { margin: 0; }
+    }
+  }
+  .main-product h1 { font-size: 2em; }
+  footer {
+    div article {
+      height: 100px;
+      .fa {
+        display: flex;
+        justify-content: center;
+        font-size: 2.5em;
+      }
+      div {
+        font-size: .8em;
+        position: static;
+        text-align: center;
+      }
+    }
+    #navigation-menu {
+      font-size: .9em;
+      padding-left: 0;
+      margin: 10px 10px 0;
+      float: inherit;
+      text-align: center;
+      li { padding-left: 5px; }
+    }
+    .credits { text-align: center; }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  header .language { top: -120px; }
+}
+@media screen and (max-width: 480px) {
+  header {
+    .logo {
+      display: block;
+      margin: 15px 15%;
+      width: 70%;
+    }
+    .language {
+      float: left;
+      margin-top: 15px;
+      position: static;
+      padding-left: 0;
+      width: 70%;
+      li { padding: 0 5px; }
+    }
+    .navigation-menu-button {
+      display: block;
+      float: right;
+      font-size: 2em;
+      margin-top: 10px;
+      text-align: center;
+      width: 30%;
+      &:hover { color: $green; }
+    }
+    nav { margin-top: 0; }
+    #navigation-menu {
+      display: none;
+      width: 90%;
+      li {
+        background-color: white;
+        border-radius: 0;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+        width: 100%;
+        &:last-child { width: 100%; }
+        &.active {
+          background-color: #FFFFFF;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .certificate article {
+      margin-right: 0;
+      width: 100%;
+  }
+  .companies .company {
+    width: 100%;
+    margin-right: 0;
+  }
+  .benefits {
+    img { display: none; }
+    div {
+      width: 100%;
+      padding: 0;
+      i {
+        display: block;
+        float: left;
+        margin-top: 10px;
+      }
+      span {
+        margin-left: 15px;
+        &:last-child { padding-top: 5px;}
+      }
+    }
+  }
+  .main-product.container {
+    padding: 0;
+    .overlay { height: 97%; }
+    h1 {
+      font-size: 1.5em;
+      bottom: 20px;
+      left: 25px;
+    }
+  }
+  .product-description .product-calendar div {
+    @include span-columns(4);
+    &:nth-child(3n+1) { margin-right: 0; }
+  }
+  footer {
+    div article {
+      float: inherit;
+      height: 60px;
+      margin: 0 auto;
+      position: static;
+      width: 80%;
+      &:last-child {
+        height: 40px;
+        margin: 0 auto;
+      }
+      i {
+        float: left;
+        text-align: right;
+        width: 20%;
+        font-size: 2.5em;
+        margin-top: 5px;
+      }
+      div {
+        float: left;
+        text-align: center;
+        width: 80%;
+      }
+    }
+    ul { display: none; }
+  }
+  .container { padding: 25px; }
+}
